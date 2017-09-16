@@ -1,0 +1,26 @@
+{
+	"name": "@dmail/sample-common-dependency",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"module": "index.js",
+	"devDependencies": {
+		"@dmail/shared-config": "*",
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.0",
+		"babel-eslint": "^8.0.0",
+		"babel-preset-env": "^1.6.0",
+		"eslint": "^3.19.0",
+		"eslint-plugin-import": "^2.7.0",
+		"prettier": "^1.7.0",
+		"rimraf": "^2.6.2"
+	},
+	"scripts": {
+		"clean": "rimraf dist",
+		"compile": "babel index.js --out-file dist/index.js --source-maps",
+		"eslint": "eslint .",
+		"test": "babel-node ./src/file.test.js",
+		"dist": "npm run clean && mkdir dist && npm run compile",
+		"prepublishOnly": "npm run dist",
+		"pretest": "npm run eslint"
+	}
+}
