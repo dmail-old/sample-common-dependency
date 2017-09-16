@@ -1,6 +1,5 @@
 {
-  "presets": [
-    "env"
-  ],
-  "plugins": []
+	"presets": ["env"],
+	"plugins": [],
+	"only": ["index.js", "src/*"]
 }

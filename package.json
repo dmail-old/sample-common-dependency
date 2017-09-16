@@ -16,12 +16,11 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist",
-		"syncMainIntoDist": "babel --watch index.js --out-file dist/index.js --source-maps",
-		"syncSrcIntoDist": "babel --watch src --out-dir dist/src",
-		"syncDist": "npm run syncMainIntoDist & syncSrcIntoDist",
+		"compile": "babel . --out-dir dist --ignore=node_modules,dist",
+		"watch": "babel . --watch --out-dir dist --ignore=node_modules,dist",
 		"eslint": "eslint .",
 		"test": "babel-node ./src/file.test.js",
-		"dist": "npm run clean && mkdir dist && npm run compile",
+		"dist": "npm run clean && npm run compile",
 		"prepublishOnly": "npm run dist",
 		"pretest": "npm run eslint"
 	}
