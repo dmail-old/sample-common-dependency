@@ -16,7 +16,9 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist",
-		"compile": "babel index.js --out-file dist/index.js --source-maps",
+		"syncMainIntoDist": "babel --watch index.js --out-file dist/index.js --source-maps",
+		"syncSrcIntoDist": "babel --watch src --out-dir dist/src",
+		"syncDist": "npm run syncMainIntoDist & syncSrcIntoDist",
 		"eslint": "eslint .",
 		"test": "babel-node ./src/file.test.js",
 		"dist": "npm run clean && mkdir dist && npm run compile",

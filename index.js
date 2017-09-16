@@ -1,4 +1,4 @@
 export * from "./src/file.js"
 
-export default "common-mokdfied"
+export default "common-modified"
 console.log("hekkrjkje")
