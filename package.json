@@ -15,13 +15,13 @@
 		"rimraf": "^2.6.2"
 	},
 	"scripts": {
-		"clean": "rimraf dist",
 		"compile": "babel . --out-dir dist --ignore=node_modules,dist",
 		"watch": "babel . --watch --out-dir dist --ignore=node_modules,dist",
-		"eslint": "eslint .",
-		"test": "babel-node ./src/file.test.js",
+		"clean": "rimraf dist",
 		"dist": "npm run clean && npm run compile",
 		"prepublishOnly": "npm run dist",
-		"pretest": "npm run eslint"
+		"eslint": "eslint .",
+		"pretest": "npm run eslint",
+		"test": "babel-node ./src/file.test.js"
 	}
 }
