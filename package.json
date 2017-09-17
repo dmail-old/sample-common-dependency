@@ -1,6 +1,10 @@
 {
 	"name": "@dmail/sample-common-dependency",
 	"version": "0.0.1",
+	"licence": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"main": "dist/index.js",
 	"module": "index.js",
 	"devDependencies": {
