@@ -1,1 +1,3 @@
-export const file = "file"
+import hello from "./dependency.js"
+
+export const fn = (a = hello) => a
