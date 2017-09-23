@@ -25,7 +25,8 @@
 		"dist": "npm run clean && npm run compile",
 		"prepublishOnly": "npm run dist",
 		"eslint": "eslint .",
-		"pretest": "npm run eslint && npm run compile",
+		"prettiest": "prettiest",
+		"pretest": "npm run eslint && npm run prettiest && npm run compile",
 		"test": "babel-node ./src/file.test.js"
 	}
 }
