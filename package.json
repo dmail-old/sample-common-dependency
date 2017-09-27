@@ -29,7 +29,7 @@
 		"eslint": "eslint .",
 		"prettiest": "prettiest",
 		"pretest": "npm run eslint && npm run prettiest && npm run compile",
-		"test": "test",
+		"test": "test-run",
 		"test-list": "test-list"
 	}
 }
