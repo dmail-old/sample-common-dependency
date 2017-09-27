@@ -1,6 +1,6 @@
 {
 	"name": "@dmail/sample-common-dependency",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"licence": "MIT",
 	"publishConfig": {
 		"access": "public"
@@ -11,18 +11,18 @@
 		"@dmail/shared-config": "^1.1.0",
 		"@dmail/test": "*",
 		"@dmail/prettiest": "*",
-		"babel-cli": "^7.0.0-beta.2",
-		"babel-core": "^7.0.0-beta.2",
-		"babel-eslint": "^8.0.1",
-		"babel-preset-env": "^2.0.0-beta.2",
-		"eslint": "^3.19.0",
-		"eslint-plugin-import": "^2.7.0",
-		"prettier": "^1.7.1",
-		"rimraf": "^2.6.2"
+		"babel-cli": "7.0.0-beta.2",
+		"babel-core": "7.0.0-beta.2",
+		"babel-eslint": "8.0.1",
+		"babel-preset-env": "2.0.0-beta.2",
+		"eslint": "3.19.0",
+		"eslint-plugin-import": "2.7.0",
+		"prettier": "1.7.0",
+		"rimraf": "2.6.2"
 	},
 	"scripts": {
 		"compile": "babel . --out-dir dist --ignore=node_modules,dist --source-maps",
-		"watch": "babel . --watch --out-dir dist --ignore=node_modules,dist",
+		"watch": "babel . --watch --out-dir dist --ignore=node_modules,dist --source-maps",
 		"clean": "rimraf dist",
 		"dist": "npm run clean && npm run compile",
 		"prepublishOnly": "npm run dist",
