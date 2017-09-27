@@ -10,7 +10,7 @@
 	"devDependencies": {
 		"@dmail/prettiest": "*",
 		"@dmail/shared-config": "^1.1.0",
-		"@dmail/test": "0.2.0",
+		"@dmail/test": "^0.2.0",
 		"babel-cli": "7.0.0-beta.2",
 		"babel-core": "7.0.0-beta.2",
 		"babel-eslint": "8.0.1",
