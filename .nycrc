@@ -1,0 +1,14 @@
+{
+  "sourceMap": false,
+  "instrument": false,
+  "include": [
+    "dist/index.js",
+    "dist/**/*.js"
+  ],
+  "exclude": [
+    "dist/**/*.test.*"
+  ],
+  "extension": [
+    ".jsx"
+  ]
+}
