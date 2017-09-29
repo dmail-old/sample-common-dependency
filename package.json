@@ -35,7 +35,7 @@
 		"test-list": "test-list",
 		"before-test": "npm run eslint && npm run prettiest && npm run compile",
 		"test": "npm run before-test && npm run test-run",
-		"test-with-coverage": "nyc npm test",
+		"test-with-coverage": "npm run before-test && nyc npm run test-run",
 		"coverage-report": "nyc report --reporter=text-lcov > coverage.lcov",
 		"coverage-upload":
 			"npm run coverage-report && codecov --token=823ba31e-8d6b-45d5-8a79-20dc330c720c",
