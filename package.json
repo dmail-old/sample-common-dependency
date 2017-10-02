@@ -16,29 +16,31 @@
 		"babel-eslint": "8.0.1",
 		"babel-plugin-istanbul": "4.1.5",
 		"babel-preset-env": "2.0.0-beta.2",
+		"codecov": "2.3.0",
 		"eslint": "3.19.0",
 		"eslint-plugin-import": "2.7.0",
 		"nyc": "11.2.1",
 		"prettier": "1.7.0",
-		"rimraf": "2.6.2",
-		"codecov": "2.3.0"
+		"rimraf": "2.6.2"
 	},
 	"scripts": {
 		"compile": "babel . --out-dir dist --ignore=node_modules,dist --source-maps",
 		"watch": "babel . --watch --out-dir dist --ignore=node_modules,dist --source-maps",
 		"clean": "rimraf dist",
 		"dist": "npm run clean && npm run compile",
+		"reset": "npm run clean && npm run coverage-clean && rimraf node_modules",
+		"reinstall": "npm run reset && npm install",
 		"prepublishOnly": "npm run dist",
 		"eslint": "eslint .",
 		"prettiest": "prettiest",
 		"test-run": "test-run",
 		"test-list": "test-list",
-		"before-test": "npm run eslint && npm run prettiest && npm run compile",
+		"before-test": "npm run eslint && npm run prettiest && npm run dist",
 		"test": "npm run before-test && npm run test-run",
-		"test-with-coverage": "npm run before-test && nyc npm run test-run",
+		"test-with-coverage": "npm run coverage-clean && npm run before-test && nyc npm run test-run",
+		"coverage-html": "nyc report --reporter=lcov",
 		"coverage-report": "nyc report --reporter=text-lcov > coverage.lcov",
-		"coverage-upload":
-			"npm run coverage-report && codecov --token=823ba31e-8d6b-45d5-8a79-20dc330c720c",
+		"coverage-upload": "npm run coverage-report && codecov --token=823ba31e-8d6b-45d5-8a79-20dc330c720c",
 		"coverage-clean": "rimraf .nyc_output && rimraf coverage && rimraf coverage.lcov"
 	}
 }
